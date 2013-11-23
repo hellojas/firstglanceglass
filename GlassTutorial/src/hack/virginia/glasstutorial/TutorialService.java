@@ -16,6 +16,7 @@ import android.speech.tts.TextToSpeech;
 import java.util.List;
 
 /**
+ * Testing
  * The main application service that manages the lifetime of the compass live card and the objects
  * that help out with orientation tracking and landmarks.
  */
