@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-         <string name="app_name">LiveCard</string>
+    <string name="app_name">TeamGlass</string>
+    <string name="action_share_to_twitter">Share to Twitter</string>
     <string name="action_add_caption">Add caption</string>
-    <string name="glass_voice_trigger">livecard</string>
+    <string name="glass_voice_trigger">TeamGlass</string>
     <string name="loading_image">Loading image</string>
+    <string name="uploading_to_twitter">Uploading to Twitter</string>
     <string name="success">Success!</string>
+
 </resources>

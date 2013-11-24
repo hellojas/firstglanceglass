@@ -3,6 +3,9 @@ package hack.virginia.glasstutorial;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 
+import twitter4j.StatusUpdate;
+import twitter4j.Twitter;
+import twitter4j.TwitterException;
 import android.app.IntentService;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -12,7 +15,6 @@ import android.os.Looper;
 import android.text.TextUtils;
 import android.util.Log;
 
-//import com.lightbox.android.photoprocessing.PhotoProcessing;
 
 public class TweetIntentService extends IntentService {
 	private static final String TAG = TweetIntentService.class.getSimpleName();
@@ -36,43 +38,46 @@ public class TweetIntentService extends IntentService {
 		String caption = intent.getStringExtra(EXTRA_CAPTION);
 
 		App app = (App) getApplication();
+		Twitter twitter = app.getTwitter();
 
-//		try {
+		try {
 			final Bitmap originalBitmap = BitmapUtils
 					.decodeSampledBitmapFromPath(imagePath, 300, 300);
-			Bitmap bm = originalBitmap;
+			Bitmap bm = PhotoProcessing
+					.filterPhoto(originalBitmap, filterIndex);
 
-//			StatusUpdate update;
-//			if (TextUtils.isEmpty(caption)) {
-//				update = new StatusUpdate("#glasstagram");
-//			} else {
-//				update = new StatusUpdate(caption + " #glasstagram");
-//			}
+			StatusUpdate update;
+			if (TextUtils.isEmpty(caption)) {
+				update = new StatusUpdate("#hackvirginia");
+			} else {
+				update = new StatusUpdate(caption + " #hackvirginia");
+			}
 
 			ByteArrayOutputStream bos = new ByteArrayOutputStream();
 			bm.compress(CompressFormat.PNG, 0 /* ignored for PNG */, bos);
 			byte[] bitmapdata = bos.toByteArray();
 			ByteArrayInputStream bs = new ByteArrayInputStream(bitmapdata);
 
-			//update.setMedia("glasstagram", bs);
+			update.setMedia("glasstagram", bs);
+			twitter.updateStatus(update);
 
-//			handler.post(new Runnable() {
-//				@Override
-//				public void run() {
-//					BusFactory.getInstance().post(new ImageTweetedEvent());
-//				}
-//			});
-//		} catch (TwitterException e) {
-//			Log.e(TAG, "Something went wrong", e);
-//
-//			handler.post(new Runnable() {
-//				@Override
-//				public void run() {
-//					BusFactory.getInstance().post(
-//							new ErrorEvent("Unable to upload to Twitter"));
-//				}
-//			});
-//		}
+			handler.post(new Runnable() {
+				@Override
+				public void run() {
+					BusFactory.getInstance().post(new ImageTweetedEvent());
+				}
+			});
+		} catch (TwitterException e) {
+			Log.e(TAG, "Something went wrong", e);
+
+			handler.post(new Runnable() {
+				@Override
+				public void run() {
+					BusFactory.getInstance().post(
+							new ErrorEvent("Unable to upload to Twitter"));
+				}
+			});
+		}
 	}
 
 }
