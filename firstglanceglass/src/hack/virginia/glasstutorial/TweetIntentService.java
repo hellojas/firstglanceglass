@@ -43,8 +43,7 @@ public class TweetIntentService extends IntentService {
 		try {
 			final Bitmap originalBitmap = BitmapUtils
 					.decodeSampledBitmapFromPath(imagePath, 300, 300);
-			Bitmap bm = PhotoProcessing
-					.filterPhoto(originalBitmap, filterIndex);
+			Bitmap bm = originalBitmap;
 
 			StatusUpdate update;
 			if (TextUtils.isEmpty(caption)) {
@@ -57,8 +56,7 @@ public class TweetIntentService extends IntentService {
 			bm.compress(CompressFormat.PNG, 0 /* ignored for PNG */, bos);
 			byte[] bitmapdata = bos.toByteArray();
 			ByteArrayInputStream bs = new ByteArrayInputStream(bitmapdata);
-
-			update.setMedia("glasstagram", bs);
+			update.setMedia("photo", bs);
 			twitter.updateStatus(update);
 
 			handler.post(new Runnable() {
