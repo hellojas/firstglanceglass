@@ -19,7 +19,6 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Toast;
 
 import hack.virginia.glasstutorial.R;
-//import com.fourpool.glasstagram.TweetIntentService;
 import com.google.android.glass.widget.CardScrollView;
 
 public class MainActivity extends Activity {
