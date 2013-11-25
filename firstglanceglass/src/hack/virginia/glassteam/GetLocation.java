@@ -1,4 +1,4 @@
-package hack.virginia.glasstutorial;
+package hack.virginia.glassteam;
 
 
 import android.app.Activity;
@@ -9,7 +9,6 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class GetLocation extends Activity implements LocationListener {
   private TextView latituteField;

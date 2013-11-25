@@ -1,4 +1,4 @@
-package hack.virginia.glasstutorial;
+package hack.virginia.glassteam;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

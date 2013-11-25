@@ -1,5 +1,4 @@
-package hack.virginia.glasstutorial;
-import java.io.File;
+package hack.virginia.glassteam;
 import java.util.List;
 
 import android.app.Activity;
@@ -12,13 +11,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.WindowManager;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.Toast;
 
-import hack.virginia.glasstutorial.R;
 import com.google.android.glass.widget.CardScrollView;
 
 public class MainActivity extends Activity {

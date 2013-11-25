@@ -1,4 +1,4 @@
-package hack.virginia.glasstutorial;
+package hack.virginia.glassteam;
 //TODO
 public class FacialRecognition {
 

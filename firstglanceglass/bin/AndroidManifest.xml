@@ -32,8 +32,8 @@
                 android:name="com.google.android.glass.VoiceTrigger"
                 android:resource="@xml/triggers" />
         </activity>
-        <service android:name="hack.virginia.glasstutorial.PrepareFileIntentService" />
-        <service android:name="hack.virginia.glasstutorial.TweetIntentService" />
+        <service android:name="hack.virginia.glassteam.PrepareFileIntentService" />
+        <service android:name="hack.virginia.glassteam.TweetIntentService" />
         
 
         </application>

@@ -1,4 +1,4 @@
-package hack.virginia.glasstutorial;
+package hack.virginia.glassteam;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;

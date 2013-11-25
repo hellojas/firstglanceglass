@@ -1,4 +1,4 @@
-package hack.virginia.glasstutorial;
+package hack.virginia.glassteam;
 
 import twitter4j.Twitter;
 import twitter4j.TwitterFactory;
