@@ -14,6 +14,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.text.TextUtils;
 import android.util.Log;
+import hack.virginia.glassteam.App;
 
 
 public class TweetIntentService extends IntentService {
