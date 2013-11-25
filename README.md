@@ -1,8 +1,8 @@
 firstglanceglass
 ================
 
-native google glass photo sharing app
-in progress template to implement some of the listed ideas below
+native google glass photo sharing app;
+an in progress template to implement some of the listed ideas below
 
 ideas:
 
