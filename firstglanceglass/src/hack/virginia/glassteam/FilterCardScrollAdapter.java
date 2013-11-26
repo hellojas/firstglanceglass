@@ -12,20 +12,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.glass.widget.CardScrollAdapter;
-//import com.lightbox.android.photoprocessing.PhotoProcessing;
 
 public class FilterCardScrollAdapter extends CardScrollAdapter {
 	private final Bitmap bitmap;
 	private final Context context;
 	private final String caption;
 
-//	private static final int[] FILTER_RES_IDS = new int[] {
-//			R.string.filter_original, R.string.filter_instafix,
-//			R.string.filter_ansel, R.string.filter_testino,
-//			R.string.filter_xpro, R.string.filter_retro, R.string.filter_bw,
-//			R.string.filter_sepia, R.string.filter_cyano,
-//			R.string.filter_georgia, R.string.filter_sahara,
-//			R.string.filter_hdr };
 
 	public FilterCardScrollAdapter(Bitmap bitmap, String caption,
 			Context context) {
@@ -44,11 +36,6 @@ public class FilterCardScrollAdapter extends CardScrollAdapter {
 		throw new UnsupportedOperationException();
 	}
 
-	@Override
-	public int getCount() {
-//		return FILTER_RES_IDS.length;
-		return 100;
-	}
 
 	@Override
 	public Object getItem(int arg0) {
@@ -67,7 +54,6 @@ public class FilterCardScrollAdapter extends CardScrollAdapter {
 		Bitmap bm = bitmap.copy(Config.ARGB_8888, true);
 
 		filteredImage.setImageBitmap(bm);
-//		filteredName.setText(FILTER_RES_IDS[arg0]);
 
 		if (!TextUtils.isEmpty(caption)) {
 			Log.d("asdf", "caption not empty");
@@ -77,5 +63,11 @@ public class FilterCardScrollAdapter extends CardScrollAdapter {
 			captionText.setVisibility(View.GONE);
 		}
 		return v;
+	}
+
+	@Override
+	public int getCount() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }

@@ -27,8 +27,6 @@ public class MainActivity extends Activity {
 	private String selectedFilePath;
 	private int selectedFilterIndex;
 	private String caption = "";
-
-	// yolo
 	private boolean photoTakingPhase = true;
 
 	@Override
@@ -65,7 +63,7 @@ public class MainActivity extends Activity {
 		switch (requestCode) {
 		case TAKE_PHOTO:
 			if (resultCode == RESULT_OK) {
-				//setContentView(R.layout.card_loading_image);
+				setContentView(R.layout.card_loading_image);
 
 				final String path = resultIntent
 						.getStringExtra(EXTRA_PICTURE_FILE_PATH);
